@@ -1,0 +1,106 @@
+/*  *** means it is important line in code*/ 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+#wrapper{
+    height: 100vh;/*height = viewport==100vh*/
+    overflow-x: hidden;/* x axis mei image jo extra aaegi 
+    ( extra==videport se bhr jaa rhi h) wo cut jaegi*/ 
+    overflow-y: auto; /*overflow ko slide krega*/
+    /***/perspective: 10px; /*iski value se frk nii pdega*/ 
+}
+
+.container{
+    /***/position: relative;/* taaki ye nearest ancester bn jae i.e . non static*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /***/transform-style: preserve-3d; /* to save the 3d properties agr ye nii krege to 2d image hi rhegi hmesha*/
+    /***/z-index: -1;/* overlap ke liiye...konsi cheej kiske upr aaegi  or   image tm neeche jao*/
+}
+
+/***/.background{
+    transform: translateZ(-40px) scale(6);/*image dur chali gai h*//*then image ko bda kra h*/
+}
+/***/.foreground{
+    transform: translateZ(-20px) scale(3); /*same as bg*/
+}
+.background, .foreground{
+    position: absolute; /* this is now relative to continer-overlap both images*/
+    height: 100%;/*pura viewport chahhiye*/
+    width: 100%;
+    z-index: -1; /* text upr aagya isse     tm bhi neeche jao and text ko upr le aao*/
+    object-fit: cover; /*used to specify how an <img> or <video> should to resized to fit its 
+    container*/
+}
+
+h1{
+    position: absolute;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 4px;
+    font-size: 10rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.secheading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    /***/background-attachment: fixed;  /* isse image ki position fix hojaegi and we can scroll on it*/
+    /***/background-size: cover; /* without this jo image thi wo agr kat rhi h to wo scroll krte 
+    time upr chali jati h with this image puri intact rhti h*/  /*same as object fit cover*/ 
+    /***/background-position:center ; /* isse image center mei aajati h*/
+    background-size: cover; /*screen cover hojae  jo height and width di h usske hisab se wo
+    image cover krdegi*/
+    height: 500px;
+
+}
+
+.desc{
+    position: absolute;/* for overlapping*/
+    background-color: white;
+    color: black;
+    padding: 0.5rem 2.5rem;
+    margin-left: 44%;
+    margin-top: 13rem;
+    font-size: 3.5rem;
+    font-weight: 600;
+
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.webp);
+}
+
+.bg3{
+    background-image: url(sports-3.jpg);
+}
